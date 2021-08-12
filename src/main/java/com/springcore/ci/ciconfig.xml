@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    ">
+    
+ <!--This is student beans  --> 
+ 
+	<bean class="com.springcore.ci.Cert" name="cer">
+		<constructor-arg value= "Telstra-jfs" />
+	</bean> 
+	
+	<!-- relation between beans -->
+    <bean class="com.springcore.ci.Person" name="person">
+    	<!-- call a single parameter -->
+    	<constructor-arg value="Vedika" />
+    	<constructor-arg value="5000" type="int" />
+    	<constructor-arg ref="cer" />
+    </bean>
+    
+     <bean class="com.springcore.ci.Adition" name="add">
+    	<!-- call a single parameter -->
+    	<constructor-arg value="30" type="String"/>
+    	<constructor-arg value="40" type="String"/>
+    	
+    </bean>
+    
+</beans>
